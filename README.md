@@ -1,24 +1,48 @@
-# README
+# FOOD-CHECK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column |Type |Options |
+|------ |---- |------- |
+|nickname |string | null: false |
+|profile  |text   |
+|email    |string | null: false, default: ""|
+|encrypted_password|string |null: false, default: ""|
 
-* Ruby version
+### Association
+- has_many :posts, dependent: :destroy
 
-* System dependencies
+## postsテーブル
 
-* Configuration
+|Column  |Type|Options|
+|------  |----|-------|
+|user_id |references| null: false, foreign_key: true|
+|name    |string | null: false |
+|content |text   | 
+|photo   |image  |
 
-* Database creation
+### Association
+- has_many :posts_tags,dependent: :destroy
+- has_many :tags, through:posts_tags
 
-* Database initialization
 
-* How to run the test suite
+## posts_tagsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|post_id |references |null: false, foreign_key: true|
+|tag_id  |references |null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+belongs_to :posts
+belongs_to :tags
 
-* ...
+## tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|tag_name|string|
+
+### Association
+- has_many :posts_tags
+- has_many :posts, through:posts_tags
