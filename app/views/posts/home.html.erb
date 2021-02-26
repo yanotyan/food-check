@@ -24,9 +24,12 @@
     <div class="col-sm ">
       <div class="col mt-5">
         <%= link_to 'Log in..', new_user_session_path, class: "btn btn-info"%>
+        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-info", method: :delete %>
+
       </div>
       <div class="col mt-5">
         <%= link_to 'New Account', new_user_registration_path, class: "btn btn-info"%>
+
       </div>
     </div>
   </div>
