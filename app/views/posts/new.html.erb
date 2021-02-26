@@ -1,0 +1,33 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <h1 class="text-center display-3">
+      New post
+    </h1>
+    <div class="col-sm text-center mt-4">
+      <%= link_to 'もどる', root_path, class: "btn btn-outline-success" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <%= form_with(model: @post, local: true) do |form| %>
+  <p class="h2">Food name</p>
+  <%= form.text_field :name, class: "hoge mb-4", size: 30 %>
+  <div class="form-group">
+    <label for="exampleFormControlFile1" class="h3">Nice Photo!</label>
+    <%= form.file_field :photo, placeholder: "Image Url", class:"form-control-file mb-4 btn-outline-info"%>
+  </div>
+  <div class="form-group">
+    <p class="h2">MEMO...</p>
+    <%= form.text_area :content, class: "exampleFormControlFile1", size: "50x10", placeholder: "memo" %>
+  </div>
+  <div class="form-group">
+    <p class=display-4>ALLERGY SELECT</p>
+    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :tag_name, class: " " %>
+  </div>
+  <%= form.submit "SEND", class: "btn btn-outline-info btn-lg " %>
+  <% end %>
+</div>
+<div class="container">
+</div>
