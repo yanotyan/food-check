@@ -22,9 +22,9 @@
     <p class="h2">MEMO...</p>
     <%= form.text_area :content, class: "exampleFormControlFile1", size: "50x10", placeholder: "memo" %>
   </div>
-  <div class="form-group">
+  <div class="form-group allergyselect">
     <p class=display-4>ALLERGY SELECT</p>
-    <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :tag_name, class: " " %>
+    <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :tag_name, class:"") %>
   </div>
   <%= form.submit "SEND", class: "btn btn-outline-info btn-lg " %>
   <% end %>
