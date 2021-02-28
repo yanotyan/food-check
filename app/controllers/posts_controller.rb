@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def new
@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     else
       render :new, notice: 'もう一度入力してください'
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
   
 
