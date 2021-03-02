@@ -21,8 +21,9 @@ input[type="checkbox"] {
 }
 
 .myphoto {
-  width: 500px;
-  height: 500px;
+  object-fit: fill;
+  width: 700px;
+  height: 600px;
 }
 
 
@@ -50,7 +51,7 @@ input[type="checkbox"] {
 }
 
 .footer {
-  margin-top: 100px;
+  margin-top: 50px;
   background-color: black;
   color: aliceblue;
   text-align: center;
