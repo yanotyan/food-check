@@ -40,7 +40,16 @@
 </div>
 
 <div class="container">
-
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <%= link_to '商品を削除する', post_path(@post.id), class: "btn btn-danger", method: :delete %>
+      <%= link_to '商品を編集する', edit_post_path(@post.id),class: "btn btn-info"%>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <% end %>
 </div>
 
 
