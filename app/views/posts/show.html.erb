@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="header display-2">FOOD-CHECK</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h1 class="display-3 ml-3"> <%=@post.name%></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="myphoto mx-auto img-fulied ">
+        <%= image_tag "#{@post.photo.url}", class: "miniphoto" %>
+      </div>
+    </div>
+    <div class="col-6 ">
+      <p class=h4>食品のアレルギー表示対象品目</p>
+      <% @post.tags.each do |tag| %>
+      <div class="btn btn-info">
+        <%=tag.tag_name%>
+      </div>
+      <% end %>
+
+      <p class="h4 mt-3">投稿者</p>
+      <div class="btn btn-info">
+        <%=@post.user.nickname%>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="container px-5 mt-3">
+  <p class=h3>Description</p>
+  <div class=h5>
+    <%=@post.content%>
+  </div>
+</div>
+
+<div class="container">
+
+</div>
+
+
+
+
+<div class="container footer">© 2021 FOOD-CHECK</div>

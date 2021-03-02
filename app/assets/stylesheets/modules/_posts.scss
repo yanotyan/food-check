@@ -20,6 +20,12 @@ input[type="checkbox"] {
   margin-bottom: 20px;
 }
 
+.myphoto {
+  width: 500px;
+  height: 500px;
+}
+
+
 .image {
   width: 200px;
   height: 200px;
@@ -34,6 +40,20 @@ input[type="checkbox"] {
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
+}
+
+.header {
+  height: 100px;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: black;
+  color: aliceblue;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
