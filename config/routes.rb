@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'posts/home'
-  root "posts#home"
-  resources :posts
+  root "posts#index"
+  resources :posts do
+  collection   do
+      get :home
+    end
+  end
 end
