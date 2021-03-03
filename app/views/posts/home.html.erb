@@ -23,12 +23,21 @@
     </div>
     <div class="col-sm ">
       <div class="col mt-5">
-        <%= link_to 'Log in..', new_user_session_path, class: "btn btn-info"%>
-        <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-info", method: :delete %>
-
+        <p>
+          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            はじめに
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            「FOODーCHECK」はあなたの健康に寄り添うアプリです。
+            あなたの食べれる物、食べれない物を管理し、あなたの食生活がよりよくなる事を私たちは願っています。
+          </div>
+        </div>
       </div>
       <div class="col mt-5">
-        <%= link_to 'New Account', new_user_registration_path, class: "btn btn-info"%>
+        <%= link_to '登録する', new_user_registration_path, class: "btn btn-info"%>
 
       </div>
     </div>
