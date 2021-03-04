@@ -15,7 +15,6 @@
         <%= image_tag "#{@post.photo.url}", class: "miniphoto" %>
       </div>
     </div>
-
     <div class="col-lg-6 mt-3 col-12">
       <p class=h4>食品のアレルギー表示対象品目</p>
       <% @post.tags.each do |tag| %>
@@ -23,10 +22,9 @@
         <%=tag.tag_name%>
       </div>
       <% end %>
-
       <p class="h4 mt-3">投稿者</p>
-      <div class="btn btn-outline-primary">
-        <%=@post.user.nickname%>
+      <div class="">
+        <%=link_to @post.user.nickname, user_path(@post.user.id), class: "btn btn-outline-primary"%>
       </div>
     </div>
   </div>
